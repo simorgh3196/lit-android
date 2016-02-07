@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.lifeistech.android.tictactoe.MainActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="false"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Player"
+            android:id="@+id/playerText"
+            android:layout_gravity="center_horizontal"
+            android:textSize="40dp"
+            android:layout_marginBottom="20dp" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+            <ImageButton
+                android:layout_width="104dp"
+                android:layout_height="104dp"
+                android:id="@+id/imageButton1"
+                android:scaleType="fitCenter"
+                android:onClick="tapMark" />
+
+            <ImageButton
+                android:layout_width="104dp"
+                android:layout_height="104dp"
+                android:id="@+id/imageButton2"
+                android:scaleType="fitCenter"
+                android:onClick="tapMark" />
+
+            <ImageButton
+                android:layout_width="104dp"
+                android:layout_height="104dp"
+                android:id="@+id/imageButton3"
+                android:scaleType="fitCenter"
+                android:onClick="tapMark" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal" >
+
+            <ImageButton
+                android:layout_width="104dp"
+                android:layout_height="104dp"
+                android:id="@+id/imageButton4"
+                android:scaleType="fitCenter"
+                android:onClick="tapMark" />
+
+            <ImageButton
+                android:layout_width="104dp"
+                android:layout_height="104dp"
+                android:id="@+id/imageButton5"
+                android:scaleType="fitCenter"
+                android:onClick="tapMark" />
+
+            <ImageButton
+                android:layout_width="104dp"
+                android:layout_height="104dp"
+                android:id="@+id/imageButton6"
+                android:scaleType="fitCenter"
+                android:onClick="tapMark" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal" >
+
+            <ImageButton
+                android:layout_width="104dp"
+                android:layout_height="104dp"
+                android:id="@+id/imageButton7"
+                android:scaleType="fitCenter"
+                android:onClick="tapMark" />
+
+            <ImageButton
+                android:layout_width="104dp"
+                android:layout_height="104dp"
+                android:id="@+id/imageButton8"
+                android:scaleType="fitCenter"
+                android:onClick="tapMark" />
+
+            <ImageButton
+                android:layout_width="104dp"
+                android:layout_height="104dp"
+                android:id="@+id/imageButton9"
+                android:scaleType="fitCenter"
+                android:onClick="tapMark" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:id="@+id/winnerText"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentStart="true"
+        android:gravity="center"
+        android:background="#7e4a4a4a"
+        android:layout_alignParentRight="false"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="false" />
+</android.support.design.widget.CoordinatorLayout>
+
