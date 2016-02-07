@@ -85,32 +85,35 @@ public class MainActivity extends AppCompatActivity {
 
         // タップされたボタンのTagを取得
         int buttonNumber = (Integer) v.getTag();
-        // 現在のプレイヤーのコマをセットする
-        mBoardButtons[buttonNumber].setImageResource(PLAYER_IMAGES[mTurn % 2]);
-        mGameBoard[buttonNumber] = mTurn % 2;
 
-        int judge = judgeGame();
+        if (mGameBoard[buttonNumber] == -1) {
+            // 現在のプレイヤーのコマをセットする
+            mBoardButtons[buttonNumber].setImageResource(PLAYER_IMAGES[mTurn % 2]);
+            mGameBoard[buttonNumber] = mTurn % 2;
 
-        if (judge != -1) {
-            if (judge == 0) {
-                // 勝敗がついた場合
-                mWinnerTextView.setText("Game End\nPlayer: ×(2)\nWin");
-                mWinnerTextView.setTextColor(Color.BLUE);
-            } else {
-                mWinnerTextView.setText("Game End\nPlayer: ○(1)\nWin");
-                mWinnerTextView.setTextColor(Color.RED);
-            }
-            mWinnerTextView.setVisibility(View.VISIBLE);
-        }else {
-            // 全てのマスが埋まっているが、勝敗が決まらなかった場合
-            if (mTurn >= mGameBoard.length) {
-                mWinnerTextView.setText("Game End\nDraw");
-                mWinnerTextView.setTextColor(Color.YELLOW);
+            int judge = judgeGame();
+
+            if (judge != -1) {
+                if (judge == 0) {
+                    // 勝敗がついた場合
+                    mWinnerTextView.setText("Game End\nPlayer: ×(2)\nWin");
+                    mWinnerTextView.setTextColor(Color.BLUE);
+                } else {
+                    mWinnerTextView.setText("Game End\nPlayer: ○(1)\nWin");
+                    mWinnerTextView.setTextColor(Color.RED);
+                }
                 mWinnerTextView.setVisibility(View.VISIBLE);
+            } else {
+                // 全てのマスが埋まっているが、勝敗が決まらなかった場合
+                if (mTurn >= mGameBoard.length) {
+                    mWinnerTextView.setText("Game End\nDraw");
+                    mWinnerTextView.setTextColor(Color.YELLOW);
+                    mWinnerTextView.setVisibility(View.VISIBLE);
+                }
+                // 次のターンにする
+                mTurn++;
+                setPlayer();
             }
-            // 次のターンにする
-            mTurn++;
-            setPlayer();
         }
     }
 
